@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="4.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1c4587;" text="Dashboard" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="employeeButton" layoutY="121.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Employees" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="floorButton" layoutY="161.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Floor Plan" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="menuButton" layoutY="201.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Menu Items" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="reportButton" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Report" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="accountButton" layoutY="281.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Account" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="251.0" layoutY="14.0" text="Placeholder Name | Role">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            <AnchorPane layoutX="14.0" layoutY="241.0" prefHeight="145.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="43.0" layoutY="14.0" prefHeight="32.0" prefWidth="114.0" text="Time Clock">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Status" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Hours" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="14.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last clock time:" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="100.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="100.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="100.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="82.68048095703125" />
+                  <Button layoutX="67.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #00b050;" text="Clock In" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="246.0" layoutY="241.0" prefHeight="145.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="46.0" layoutY="14.0" text="Time Sheet">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Hours:" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="14.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduled:" wrappingWidth="82.68048095703125" />
+                  <Button layoutX="65.0" layoutY="105.0" mnemonicParsing="false" style="-fx-background-color: #cc0000;" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="97.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="82.68048095703125" />
+                  <Text layoutX="97.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="82.68048095703125" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="52.0" prefHeight="170.0" prefWidth="430.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Text layoutX="14.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="133.0" layoutY="14.0" text="User Information">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="14.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" wrappingWidth="73.0562744140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="13.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact:" wrappingWidth="76.5797119140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="149.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="132.7906494140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="149.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="132.7906494140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="149.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="132.7906494140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="149.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="132.7906494140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
