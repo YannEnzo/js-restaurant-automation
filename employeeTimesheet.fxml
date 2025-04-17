@@ -13,9 +13,9 @@
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="4.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Monotype Corsiva" size="20.0" />
                     </font>
                 </Label>
                 <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
@@ -56,7 +56,7 @@
          <children>
             <Label prefHeight="41.0" prefWidth="460.0" style="-fx-background-color: #64aee8;" text="    Employee Timesheet Report" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Times New Roman Bold Italic" size="18.0" />
                </font>
             </Label>
             <TableView layoutX="14.0" layoutY="119.0" prefHeight="267.0" prefWidth="436.0">

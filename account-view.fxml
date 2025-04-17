@@ -11,9 +11,9 @@
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="4.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Monotype Corsiva" size="20.0" />
                     </font>
                 </Label>
                 <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1c4587;" text="Dashboard" textFill="WHITE">
@@ -59,9 +59,9 @@
                 </Label>
             <AnchorPane layoutX="14.0" layoutY="241.0" prefHeight="145.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <Label layoutX="43.0" layoutY="14.0" prefHeight="32.0" prefWidth="114.0" text="Time Clock">
+                  <Label layoutX="42.0" layoutY="14.0" prefHeight="32.0" prefWidth="114.0" text="Time Clock">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Times New Roman" size="22.0" />
                      </font>
                   </Label>
                   <Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Status" wrappingWidth="82.68048095703125" />
@@ -77,7 +77,7 @@
                <children>
                   <Label layoutX="46.0" layoutY="14.0" text="Time Sheet">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Times New Roman" size="22.0" />
                      </font>
                   </Label>
                   <Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Hours:" wrappingWidth="82.68048095703125" />
@@ -98,9 +98,9 @@
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Label layoutX="133.0" layoutY="14.0" text="User Information">
+                  <Label layoutX="139.0" layoutY="14.0" text="User Information">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Times New Roman" size="22.0" />
                      </font>
                   </Label>
                   <Text layoutX="14.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:">

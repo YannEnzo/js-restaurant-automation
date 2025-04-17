@@ -12,9 +12,9 @@
     <top>
         <AnchorPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #1e01fa;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="162.0" layoutY="24.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="183.0" layoutY="25.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font size="46.0" />
+                        <Font name="Monotype Corsiva" size="46.0" />
                     </font>
                 </Label>
             </children>
@@ -25,9 +25,9 @@
             <children>
                 <AnchorPane layoutX="100.0" layoutY="13.0" prefHeight="262.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <Label layoutX="175.0" layoutY="14.0" text="Login">
+                        <Label layoutX="176.0" layoutY="14.0" text="Login">
                             <font>
-                                <Font size="20.0" />
+                                <Font name="Times New Roman" size="20.0" />
                             </font>
                         </Label>
                         <Label fx:id="wrongLogin" layoutX="181.0" layoutY="44.0" textFill="#a40000">
@@ -37,19 +37,19 @@
                         </Label>
                         <Label layoutX="14.0" layoutY="70.0" text="Username">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="Times New Roman" size="16.0" />
                             </font>
                         </Label>
                         <Label layoutX="14.0" layoutY="131.0" text="Password">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="Times New Roman" size="16.0" />
                             </font>
                         </Label>
                         <TextField fx:id="usernameField" layoutX="14.0" layoutY="96.0" prefHeight="26.0" prefWidth="365.0" promptText="Enter your Username" />
                         <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="157.0" prefHeight="26.0" prefWidth="365.0" promptText="Enter your Password" />
                         <Button fx:id="loginButton" layoutX="161.0" layoutY="204.0" mnemonicParsing="false" onAction="#userLogin" style="-fx-background-color: #1e01fa;" text="Login" textFill="WHITE">
                             <font>
-                                <Font size="20.0" />
+                                <Font name="Times New Roman" size="20.0" />
                             </font>
                         </Button>
                     </children>

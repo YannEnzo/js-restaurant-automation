@@ -12,9 +12,9 @@
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="4.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Monotype Corsiva" size="20.0" />
                     </font>
                 </Label>
                 <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
@@ -77,22 +77,22 @@
                 <TextField layoutX="24.0" layoutY="336.0" />
                 <Text layoutX="14.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Name">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="Times New Roman" size="18.0" />
                     </font>
                 </Text>
                 <Text layoutX="246.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Info">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="Times New Roman" size="18.0" />
                     </font>
                 </Text>
                 <Text layoutX="24.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="Times New Roman" size="18.0" />
                     </font>
                 </Text>
                 <Text layoutX="24.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                     <font>
-                        <Font size="18.0" />
+                        <Font name="Times New Roman" size="18.0" />
                     </font>
                 </Text>
                 <Text layoutX="4.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Login Information">
@@ -102,12 +102,12 @@
                 </Text>
                 <Button layoutX="281.0" layoutY="275.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" style="-fx-background-color: #aadd7b;" text="Confirm" textFill="WHITE">
                     <font>
-                        <Font size="20.0" />
+                        <Font name="Times New Roman Bold" size="20.0" />
                     </font>
                 </Button>
                 <Button layoutX="280.0" layoutY="327.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" style="-fx-background-color: #5c9ffb;" text="Reset" textFill="WHITE">
                     <font>
-                        <Font size="20.0" />
+                        <Font name="Times New Roman Bold" size="20.0" />
                     </font>
                 </Button>
             </children>

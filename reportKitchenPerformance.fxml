@@ -12,9 +12,9 @@
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="4.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Monotype Corsiva" size="20.0" />
                     </font>
                 </Label>
                 <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
@@ -55,24 +55,24 @@
             <children>
                 <Label layoutX="14.0" layoutY="14.0" text="Reports">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Times New Roman Bold" size="20.0" />
                     </font>
                 </Label>
                 <AnchorPane layoutY="54.0" prefHeight="346.0" prefWidth="460.0" style="-fx-background-color: #FFFFFF;">
                     <children>
                         <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: #b7c1c5;" text="Top Sellers">
                             <font>
-                                <Font size="14.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Button>
                         <Button layoutX="126.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: #b7c1c5;" text="Inventory">
                             <font>
-                                <Font size="14.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Button>
                         <Button layoutX="230.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: #1c4587;" text="Kitchen Performance" textFill="WHITE">
                             <font>
-                                <Font size="14.0" />
+                                <Font name="Times New Roman" size="14.0" />
                             </font>
                         </Button>
                         <TableView layoutX="14.0" layoutY="64.0" prefHeight="268.0" prefWidth="432.0">
