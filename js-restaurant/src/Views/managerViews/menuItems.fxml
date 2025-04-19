@@ -9,41 +9,41 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.man_MenuItemController">
     <left>
-        <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="723.0" prefWidth="200.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="16.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="Monotype Corsiva" size="20.0" />
+                        <Font name="Monotype Corsiva" size="33.0" />
                     </font>
                 </Label>
-                <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
+                <Button fx:id="dashboardButton" layoutY="81.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="employeeButton" layoutY="121.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Employees" textFill="WHITE">
+                <Button fx:id="employeeButton" layoutY="141.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Employees" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="floorButton" layoutY="161.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Floor Plan" textFill="WHITE">
+                <Button fx:id="floorButton" layoutY="261.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Floor Plan" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="menuButton" layoutY="201.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1c4587;" text="Menu Items" textFill="WHITE">
+                <Button fx:id="menuButton" layoutY="201.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #1c4587;" text="Menu Items" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="reportButton" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Report" textFill="WHITE">
+                <Button fx:id="reportButton" layoutY="321.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Report" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="accountButton" layoutY="281.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Account" textFill="WHITE">
+                <Button fx:id="accountButton" layoutY="381.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Account" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
@@ -56,63 +56,66 @@
             <children>
                 <Label layoutX="14.0" layoutY="14.0" text="Menu Management">
                     <font>
-                        <Font name="Times New Roman Bold" size="20.0" />
+                        <Font name="Times New Roman Bold" size="40.0" />
                     </font>
                 </Label>
-                <Button layoutX="366.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #41aef5;" text="Edit" textFill="WHITE">
+                <Button fx:id="editButton" layoutX="718.0" layoutY="14.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="169.0" style="-fx-background-color: #41aef5;" text="Edit" textFill="WHITE">
                     <font>
-                        <Font name="Times New Roman Bold" size="16.0" />
+                        <Font name="Times New Roman Bold" size="32.0" />
                     </font>
                 </Button>
-            <Button layoutX="79.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #8fa6b0;" text="Appetizers">
+                <Button fx:id="appetizerButton" layoutX="129.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="122.0" style="-fx-background-color: #8fa6b0;" text="Appetizers">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="saladButton" layoutX="251.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" style="-fx-background-color: #8fa6b0;" text="Salads">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="allitemsButton" layoutX="13.0" layoutY="105.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="116.0" style="-fx-background-color: #41aef5;" text="All Items" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="entreeButton" layoutX="345.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="100.0" style="-fx-background-color: #8fa6b0;" text="Entrees">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="sandwichButton" layoutX="445.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="134.0" style="-fx-background-color: #8fa6b0;" text="Sandwiches">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="sideButton" layoutX="579.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="96.0" style="-fx-background-color: #8fa6b0;" text="Sides">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="burgerButton" layoutX="675.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="116.0" style="-fx-background-color: #8fa6b0;" text="Burgers">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="drinkButton" layoutX="791.0" layoutY="105.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="104.0" style="-fx-background-color: #8fa6b0;" text="Drinks">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="menuItemTable" layoutX="10.0" layoutY="249.0" prefHeight="459.0" prefWidth="882.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="Item Name" />
+                        <TableColumn prefWidth="83.20001220703125" text="Category" />
+                        <TableColumn prefWidth="92.79998779296875" text="Price" />
+                        <TableColumn prefWidth="182.39990234375" text="Actions" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="searchMenuItems" layoutX="23.0" layoutY="181.0" prefHeight="54.0" prefWidth="400.0" promptText="Search Menu items...">
                <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="141.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="43.0" style="-fx-background-color: #8fa6b0;" text="Salads">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="27.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #41aef5;" text="All Items" textFill="WHITE">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="184.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="46.0" style="-fx-background-color: #8fa6b0;" text="Entrees">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="230.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #8fa6b0;" text="Sandwiches">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="296.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="37.0" style="-fx-background-color: #8fa6b0;" text="Sides">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="334.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #8fa6b0;" text="Burgers">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <Button layoutX="384.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="49.0" style="-fx-background-color: #8fa6b0;" text="Drinks">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-            <TableView layoutX="14.0" layoutY="128.0" prefHeight="258.0" prefWidth="433.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Item Name" />
-                <TableColumn prefWidth="83.20001220703125" text="Category" />
-                  <TableColumn prefWidth="92.79998779296875" text="Price" />
-                  <TableColumn prefWidth="182.39990234375" text="Actions" />
-              </columns>
-            </TableView>
-            <TextField layoutX="27.0" layoutY="95.0" promptText="Search Menu items..." />
+                  <Font size="20.0" />
+               </font></TextField>
             </children>
         </AnchorPane>
     </center>

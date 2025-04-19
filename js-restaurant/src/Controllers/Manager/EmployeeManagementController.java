@@ -9,6 +9,6 @@ package Controllers.Manager;
  *
  * @author yanne
  */
-class EmployeeManagementController {
+public class EmployeeManagementController {
     
 }

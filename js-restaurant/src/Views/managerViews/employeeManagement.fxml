@@ -9,41 +9,41 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.EmployeeManagementController">
     <left>
-        <AnchorPane prefHeight="400.0" prefWidth="140.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="723.0" prefWidth="200.0" style="-fx-background-color: #073763;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="19.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
+                <Label layoutX="16.0" layoutY="14.0" text="J's Restaurant" textFill="WHITE">
                     <font>
-                        <Font name="Monotype Corsiva" size="20.0" />
+                        <Font name="Monotype Corsiva" size="33.0" />
                     </font>
                 </Label>
-                <Button layoutY="81.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
+                <Button fx:id="dashboardButton" layoutY="81.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Dashboard" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="employeeButton" layoutY="121.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1c4587;" text="Employees" textFill="WHITE">
+                <Button fx:id="employeeButton" layoutY="141.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #1c4587;" text="Employees" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="floorButton" layoutY="161.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Floor Plan" textFill="WHITE">
+                <Button fx:id="floorButton" layoutY="261.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Floor Plan" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="menuButton" layoutY="201.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Menu Items" textFill="WHITE">
+                <Button fx:id="menuButton" layoutY="201.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Menu Items" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="reportButton" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Report" textFill="WHITE">
+                <Button fx:id="reportButton" layoutY="321.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Report" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="accountButton" layoutY="281.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #073763;" text="Account" textFill="WHITE">
+                <Button fx:id="accountButton" layoutY="381.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #073763;" text="Account" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
@@ -56,25 +56,25 @@
          <children>
             <Label layoutX="14.0" layoutY="14.0" text="Manage Employees">
                <font>
-                  <Font name="Times New Roman Bold" size="20.0" />
+                  <Font name="Times New Roman Bold" size="40.0" />
                </font>
             </Label>
-            <TableView fx:id="employeeTable" layoutX="14.0" layoutY="96.0" prefHeight="290.0" prefWidth="435.0">
+            <TableView fx:id="employeeTable" layoutX="14.0" layoutY="182.0" prefHeight="526.0" prefWidth="882.0">
               <columns>
-                <TableColumn prefWidth="39.20001220703125" text="ID" />
-                <TableColumn prefWidth="86.4000244140625" text="Name" />
-                  <TableColumn prefWidth="69.5999755859375" text="Role" />
-                  <TableColumn prefWidth="76.0" text="Contact" />
-                  <TableColumn prefWidth="77.60003662109375" text="Status" />
-                  <TableColumn prefWidth="83.19999999999999" text="Actions" />
+                <TableColumn prefWidth="55.20001220703125" text="ID" />
+                <TableColumn prefWidth="207.20001220703125" text="Name" />
+                  <TableColumn prefWidth="106.4000244140625" text="Role" />
+                  <TableColumn prefWidth="160.0" text="Contact" />
+                  <TableColumn prefWidth="131.20001220703125" text="Status" />
+                  <TableColumn prefWidth="227.20001220703125" text="Actions" />
               </columns>
             </TableView>
-            <Button fx:id="addEmployeeButton" layoutX="306.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #8ee47a;" text="+ Add Employee">
+            <Button fx:id="addEmployeeButton" layoutX="624.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #8ee47a;" text="+ Add Employee">
                <font>
-                  <Font name="Times New Roman Bold" size="16.0" />
+                  <Font name="Times New Roman Bold" size="32.0" />
                </font>
             </Button>
-            <TextField fx:id="searchEmployee" layoutX="14.0" layoutY="59.0" prefHeight="30.0" prefWidth="190.0" promptText="Search Employees...">
+            <TextField fx:id="searchEmployee" layoutX="14.0" layoutY="106.0" prefHeight="50.0" prefWidth="380.0" promptText="Search Employees...">
                <font>
                   <Font size="14.0" />
                </font>

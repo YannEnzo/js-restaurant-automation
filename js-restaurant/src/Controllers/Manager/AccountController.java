@@ -9,6 +9,6 @@ package Controllers.Manager;
  *
  * @author yanne
  */
-class AccountController {
+public class AccountController {
     
 }
