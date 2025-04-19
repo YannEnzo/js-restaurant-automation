@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.manager_MainController">
+   <children>
+      <BorderPane layoutX="-6.0" prefHeight="800.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="723.0" prefWidth="299.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="723.0" prefWidth="299.0" style="-fx-background-color: #29318a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="112.0" fitWidth="114.0" layoutX="95.0" layoutY="36.0">
+                           <image>
+                              <Image url="@../../Resources/Images/adminlogo.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="37.0" layoutY="232.0" mnemonicParsing="false" onAction="#onDashboard" prefHeight="50.0" prefWidth="237.0" text="Dashboard">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="HOME" size="30" />
+                           </graphic>
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="35.0" layoutY="303.0" mnemonicParsing="false" onAction="#onEmployees" prefHeight="32.0" prefWidth="237.0" text="Employees">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USER" size="30" />
+                           </graphic>
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                        </Button>
+                        <FontAwesomeIconView fill="TRANSPARENT" glyphName="SIGN_OUT" layoutX="34.0" layoutY="692.0" size="30" text="" wrappingWidth="31.14285659790039" />
+                        <Button layoutX="37.0" layoutY="373.0" mnemonicParsing="false" onAction="#onFloorPlan" prefHeight="32.0" prefWidth="237.0" text="Floor Plan">
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="HOME" size="30" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="38.0" layoutY="442.0" mnemonicParsing="false" onAction="#onMenu" prefHeight="32.0" prefWidth="237.0" text="Menu Items">
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="LIST" size="28" />
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="50.0" layoutY="180.0" prefHeight="6.0" prefWidth="200.0" style="-fx-background-color: GREY;" />
+                        <Button layoutX="40.0" layoutY="508.0" mnemonicParsing="false" onAction="#onReport" prefHeight="32.0" prefWidth="237.0" text="Report">
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SIGNAL" size="28" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="38.0" layoutY="579.0" mnemonicParsing="false" onAction="#onAccount" prefHeight="32.0" prefWidth="237.0" text="Account">
+                           <font>
+                              <Font name="OCR A Extended" size="25.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="GEAR" size="30" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane fx:id="content" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
