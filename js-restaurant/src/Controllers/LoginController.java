@@ -167,7 +167,7 @@ public class LoginController {
             showError("Database error. Please try again later.", Color.RED);
         } catch (Exception ex) {
             logger.log(Level.SEVERE, "Unexpected error during login", ex);
-            showError("An unexpected error occurred. Please try again.", Color.RED);
+            showError("An unexpected errosr occurred. Please try again.", Color.RED);
         }
     }
     
@@ -242,7 +242,7 @@ public class LoginController {
             
             switch (user.getRole()) {
                 case "MANAGER":
-                    fxmlFile = "/Views/managerViews/managerDashboard.fxml";
+                    fxmlFile = "/Views/managerViews/manager_Main.fxml";
                     title = "Manager Dashboard - " + user.getFullName();
                     break;
             /*    case "WAITER":
@@ -276,6 +276,7 @@ public class LoginController {
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.setMaximized(true);
             stage.show();
             

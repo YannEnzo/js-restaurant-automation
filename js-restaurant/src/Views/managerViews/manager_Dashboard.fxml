@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="homeAnchorPane" prefHeight="723.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.manager_DashboardController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="14.0" prefHeight="258.0" prefWidth="1082.0" style="-fx-background-radius: 20px; -fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="108.0" layoutY="47.0" prefHeight="200.0" prefWidth="395.0" style="-fx-background-color: #29318a; -fx-border-radius: 15px; -fx-background-radius: 15px;">
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="33.0" layoutY="100.0" size="80" />
+                  <Label layoutX="70.0" layoutY="136.0" prefHeight="23.0" prefWidth="296.0" text="Total Number of Nodes" textFill="#fcfcfc">
+                     <font>
+                        <Font name="OCR A Extended" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numberOfnodeslabel" layoutX="336.0" layoutY="24.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Palatino Linotype" size="37.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="638.0" layoutY="47.0" prefHeight="200.0" prefWidth="386.0" style="-fx-background-color: #29318a; -fx-background-radius: 15px;">
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="BUILDING" layoutX="22.0" layoutY="105.0" size="70" />
+                  <Label layoutX="87.0" layoutY="145.0" prefHeight="23.0" prefWidth="239.0" text="Availaible Nodes" textFill="#fcfcfc">
+                     <font>
+                        <Font name="OCR A Extended" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numberOfAvailaiblenodeslabel" layoutX="334.0" layoutY="33.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Palatino Linotype" size="37.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="317.0" fitWidth="357.0" layoutX="395.0" layoutY="331.0">
+         <image>
+            <Image url="@../../Resources/Images/home-8.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
