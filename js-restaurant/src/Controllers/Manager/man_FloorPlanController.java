@@ -1,16 +1,29 @@
-package Controllers.Waiter;
+package Controllers.Manager;
 
 import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-public class waiterTableController {
+
+public class man_FloorPlanController {
+    @FXML
+    private Button dashboardButton;
+    @FXML
+    private Button employeeButton;
+    @FXML
+    private Button floorButton;
+    @FXML
+    private Button menuButton;
+    @FXML
+    private Button reportButton;
     @FXML
     private Button accountButton;
-    
+
     @FXML
     private Button tableA1;
     @FXML
@@ -67,5 +80,4 @@ public class waiterTableController {
     private Button tableF5;
     @FXML
     private Button tableF6;
-
 }

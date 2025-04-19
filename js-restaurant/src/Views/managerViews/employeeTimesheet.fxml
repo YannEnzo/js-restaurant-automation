@@ -61,11 +61,11 @@
             </Label>
             <TableView fx:id="employeeTimesheetTable" layoutX="14.0" layoutY="214.0" prefHeight="494.0" prefWidth="878.0">
               <columns>
-                <TableColumn prefWidth="150.39999389648438" text="Date" />
-                <TableColumn prefWidth="137.60000610351562" text="Clock In" />
-                  <TableColumn prefWidth="152.79995727539062" text="Clock Out" />
-                  <TableColumn prefWidth="171.99993896484375" text="Break" />
-                  <TableColumn prefWidth="266.4000244140625" text="Hours Worked" />
+                <TableColumn fx:id="dateColumn" prefWidth="150.39999389648438" text="Date" />
+                <TableColumn fx:id="clockInColumn" prefWidth="137.60000610351562" text="Clock In" />
+                  <TableColumn fx:id="clockOutColumn" prefWidth="152.79995727539062" text="Clock Out" />
+                  <TableColumn fx:id="breakColumn" prefWidth="171.99993896484375" text="Break" />
+                  <TableColumn fx:id="hoursColumn" prefWidth="266.4000244140625" text="Hours Worked" />
               </columns>
             </TableView>
             <Text fx:id="employeeName" layoutX="14.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="324.5367126464844">

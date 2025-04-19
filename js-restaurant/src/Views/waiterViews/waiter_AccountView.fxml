@@ -121,12 +121,12 @@
                                 <Font size="34.0" />
                             </font>
                         </Text>
-                        <Text fx:id="nameLine" layoutX="203.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="252.7906494140625">
+                        <Text fx:id="idLine" layoutX="203.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="252.7906494140625">
                             <font>
                                 <Font size="34.0" />
                             </font>
                         </Text>
-                        <Text fx:id="idLine" layoutX="203.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="275.99066162109375">
+                        <Text fx:id="nameLine" layoutX="203.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="275.99066162109375">
                             <font>
                                 <Font size="34.0" />
                             </font>
@@ -136,7 +136,7 @@
                                 <Font size="34.0" />
                             </font>
                         </Text>
-                        <Text fx:id="contactLine" layoutX="203.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="187.190673828125">
+                        <Text fx:id="contactLine" layoutX="199.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder" wrappingWidth="187.190673828125">
                             <font>
                                 <Font size="34.0" />
                             </font>

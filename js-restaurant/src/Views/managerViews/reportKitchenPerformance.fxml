@@ -77,10 +77,10 @@
                         </Button>
                         <TableView fx:id="prepTimeChart" layoutX="14.0" layoutY="142.0" prefHeight="514.0" prefWidth="880.0">
                             <columns>
-                                <TableColumn prefWidth="262.3999938964844" text="Item Name" />
-                                <TableColumn prefWidth="199.20004272460938" text="Category" />
-                                <TableColumn prefWidth="177.60000610351562" text="Avg Prep Time" />
-                                <TableColumn prefWidth="241.60009765625" text="Target Prep Time" />
+                                <TableColumn fx:id="itemNameColumn" prefWidth="262.3999938964844" text="Item Name" />
+                                <TableColumn fx:id="categoryColumn" prefWidth="199.20004272460938" text="Category" />
+                                <TableColumn fx:id="avgTimeColumn" prefWidth="177.60000610351562" text="Avg Prep Time" />
+                                <TableColumn fx:id="targetTimeColumn" prefWidth="241.60009765625" text="Target Prep Time" />
                             </columns>
                         </TableView>
                     </children></AnchorPane>

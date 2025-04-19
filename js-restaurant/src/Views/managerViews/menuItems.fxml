@@ -74,7 +74,7 @@
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <Button fx:id="allitemsButton" layoutX="13.0" layoutY="105.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="116.0" style="-fx-background-color: #41aef5;" text="All Items" textFill="WHITE">
+                <Button fx:id="allItemsButton" layoutX="13.0" layoutY="105.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="116.0" style="-fx-background-color: #41aef5;" text="All Items" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -106,10 +106,10 @@
                 </Button>
                 <TableView fx:id="menuItemTable" layoutX="10.0" layoutY="249.0" prefHeight="459.0" prefWidth="882.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="Item Name" />
-                        <TableColumn prefWidth="83.20001220703125" text="Category" />
-                        <TableColumn prefWidth="92.79998779296875" text="Price" />
-                        <TableColumn prefWidth="182.39990234375" text="Actions" />
+                        <TableColumn fx:id="itemNameColumn" prefWidth="245.60003662109375" text="Item Name" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="208.79998779296875" text="Category" />
+                        <TableColumn fx:id="priceColumn" prefWidth="181.60003662109375" text="Price" />
+                        <TableColumn fx:id="actionColumn" prefWidth="247.199951171875" text="Actions" />
                     </columns>
                 </TableView>
                 <TextField fx:id="searchMenuItems" layoutX="23.0" layoutY="181.0" prefHeight="54.0" prefWidth="400.0" promptText="Search Menu items...">

@@ -77,11 +77,11 @@
                         </Button>
                         <TableView fx:id="inventoryReportTable" layoutX="14.0" layoutY="135.0" prefHeight="522.0" prefWidth="878.0">
                             <columns>
-                                <TableColumn prefWidth="67.20001220703125" text="Item Name" />
-                                <TableColumn prefWidth="62.39996337890625" text="Category" />
-                                <TableColumn prefWidth="89.5999755859375" text="Current Stock" />
-                                <TableColumn prefWidth="117.5999755859375" text="Min Required" />
-                                <TableColumn prefWidth="93.5999755859375" text="Status" />
+                                <TableColumn fx:id="itemNameColumn" prefWidth="216.0" text="Item Name" />
+                                <TableColumn fx:id="categoryColumn" prefWidth="152.0" text="Category" />
+                                <TableColumn fx:id="currentStockColumn" prefWidth="159.99993896484375" text="Current Stock" />
+                                <TableColumn fx:id="minStockColumn" prefWidth="128.800048828125" text="Min Required" />
+                                <TableColumn fx:id="statusColumn" prefWidth="223.20001220703125" text="Status" />
                             </columns>
                         </TableView>
                     </children></AnchorPane>

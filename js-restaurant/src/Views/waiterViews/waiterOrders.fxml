@@ -7,42 +7,42 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Waiter.waiterOrderController">
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
             <children>
                 <AnchorPane layoutY="52.0" prefHeight="670.0" prefWidth="1102.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Appetizers">
+                  <Button fx:id="appetizerButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Appetizers">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                      <Button layoutX="8.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="157.0" style="-fx-background-color: #1155cc;" text="Return" textFill="WHITE">
+                      <Button fx:id="returnButton" layoutX="8.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="157.0" style="-fx-background-color: #1155cc;" text="Return" textFill="WHITE">
                           <font>
                               <Font size="30.0" />
                           </font>
                       </Button>
-                  <Button layoutX="159.0" layoutY="14.0" mnemonicParsing="false" text="Salads">
+                  <Button fx:id="saladButton" layoutX="159.0" layoutY="14.0" mnemonicParsing="false" text="Salads">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button layoutX="259.0" layoutY="14.0" mnemonicParsing="false" text="Entrees">
+                  <Button fx:id="entreeButton" layoutX="259.0" layoutY="14.0" mnemonicParsing="false" text="Entrees">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button layoutX="369.0" layoutY="14.0" mnemonicParsing="false" text="Sandwiches">
+                  <Button fx:id="sandwichButton" layoutX="369.0" layoutY="14.0" mnemonicParsing="false" text="Sandwiches">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button layoutX="525.0" layoutY="14.0" mnemonicParsing="false" text="Sides">
+                  <Button fx:id="sideButton" layoutX="525.0" layoutY="14.0" mnemonicParsing="false" text="Sides">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button layoutX="174.0" layoutY="65.0" mnemonicParsing="false" text="Beverages">
+                  <Button fx:id="drinkButton" layoutX="174.0" layoutY="65.0" mnemonicParsing="false" text="Beverages">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
-                  <Button layoutX="314.0" layoutY="65.0" mnemonicParsing="false" text="Burgers">
+                  <Button fx:id="burgerButton" layoutX="314.0" layoutY="65.0" mnemonicParsing="false" text="Burgers">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
@@ -53,15 +53,15 @@
                               <Font size="32.0" />
                            </font>
                         </Text>
-                        <TextArea layoutX="14.0" layoutY="43.0" prefHeight="522.0" prefWidth="392.0" />
+                        <TextArea fx:id="chequeArea" layoutX="14.0" layoutY="43.0" prefHeight="522.0" prefWidth="392.0" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="676.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="130.0" style="-fx-background-color: #1155cc;" text="Pay" textFill="WHITE">
+                  <Button fx:id="payButton" layoutX="676.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="130.0" style="-fx-background-color: #1155cc;" text="Pay" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button layoutX="813.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="274.0" style="-fx-background-color: #1155cc;" text="Save and Send" textFill="WHITE">
+                  <Button fx:id="saveButton" layoutX="813.0" layoutY="589.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="274.0" style="-fx-background-color: #1155cc;" text="Save and Send" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -76,8 +76,8 @@
                   <Button fx:id="menuItem6" layoutX="468.0" layoutY="295.0" mnemonicParsing="false" prefHeight="125.0" prefWidth="165.0" text="menuItem" />
                   <Button fx:id="menuItem9" layoutX="470.0" layoutY="445.0" mnemonicParsing="false" prefHeight="125.0" prefWidth="165.0" text="menuItem" />
                </children></AnchorPane>
-                <AnchorPane layoutX="364.0" layoutY="4.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffb02e;" />
-                <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Table Placeholder">
+                <AnchorPane fx:id="statusIndicator" layoutX="364.0" layoutY="4.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffb02e;" />
+                <Text fx:id="tableIDLine" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Table Placeholder">
                     <font>
                         <Font size="29.0" />
                     </font>
