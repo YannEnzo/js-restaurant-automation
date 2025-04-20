@@ -14,7 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 
@@ -303,4 +305,32 @@ public class TableDAO extends BaseDAO<RestaurantTable> {
         return new RestaurantTable(tableId, tableNumber, status, capacity, 
                                   locationX, locationY, assignedWaiterId);
     }
+    /**
+ * Get table count grouped by status
+ * @return Map with status as key and count as value
+ */
+public Map<String, Integer> getTableStatusSummary() throws SQLException {
+    Map<String, Integer> statusCounts = new HashMap<>();
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = dbManager.getConnection();
+        stmt = conn.createStatement();
+        String sql = "SELECT status, COUNT(*) as count FROM restaurant_table GROUP BY status";
+        rs = stmt.executeQuery(sql);
+        
+        while (rs.next()) {
+            statusCounts.put(rs.getString("status"), rs.getInt("count"));
+        }
+    } catch (SQLException e) {
+        logger.log(Level.SEVERE, "Error retrieving table status summary", e);
+        throw e;
+    } finally {
+        closeResources(conn, stmt, rs);
+    }
+    
+    return statusCounts;
+}
 }

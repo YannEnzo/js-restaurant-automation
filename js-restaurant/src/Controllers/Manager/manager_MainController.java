@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controllers.Manager;
 
 import DAO.DatabaseManager;
@@ -42,11 +37,13 @@ public class manager_MainController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Load dashboard by default when manager view is opened
+        logger.info("Manager Main Controller initialized");
+        
+        // Load dashboard as default view on initialization
         try {
             onDashboard(null);
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, "Failed to load default dashboard view", ex);
+            logger.log(Level.SEVERE, "Failed to load dashboard on initialization", ex);
         }
     }
     
@@ -60,6 +57,9 @@ public class manager_MainController implements Initializable {
         // Update UI elements with user information
         if (userNameLabel != null && user != null) {
             userNameLabel.setText(user.getFullName());
+            logger.info("User name set to: " + user.getFullName());
+        } else {
+            logger.warning("userNameLabel is null or user is null");
         }
     }
     
@@ -69,22 +69,43 @@ public class manager_MainController implements Initializable {
      */
     @FXML
     void onDashboard(ActionEvent event) {
-      /*  try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/ManagerDashboardContent.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load dashboard.");
+                return;
+            }
+            
+            // Load the dashboard view
+            URL dashboardUrl = getClass().getResource("/Views/managerViews/manager_Dashboard.fxml");
+            if (dashboardUrl == null) {
+                logger.severe("Dashboard FXML file not found");
+                return;
+            }
+            
+            logger.info("Loading dashboard from: " + dashboardUrl);
+            
+            FXMLLoader loader = new FXMLLoader(dashboardUrl);
             AnchorPane dashboardPane = loader.load();
             
-            // Get the controller and initialize it with necessary data
-            ManagerDashboardController controller = loader.getController();
-            controller.initializeData();
+            // Get the controller
+            manager_DashboardController dashboardController = loader.getController();
             
             // Clear existing content and add new content
             content.getChildren().clear();
+            
+            // Manually set size to match parent container
+            dashboardPane.prefWidthProperty().bind(content.widthProperty());
+            dashboardPane.prefHeightProperty().bind(content.heightProperty());
+            
             content.getChildren().add(dashboardPane);
             
             logger.info("Dashboard view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading dashboard view", ex);
-        } */
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, "Unexpected error loading dashboard view", ex);
+        }
     }
     
     /**
@@ -93,14 +114,30 @@ public class manager_MainController implements Initializable {
      */
     @FXML
     void onEmployees(ActionEvent event) {
-      /*  try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/EmployeeManagementView.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load employee view.");
+                return;
+            }
+            
+            // Based on the project structure shown, use the correct path
+            String fxmlPath = "/Views/managerViews/manager_Employeeview.fxml";
+            
+            URL fxmlUrl = getClass().getResource(fxmlPath);
+            if (fxmlUrl == null) {
+                logger.severe("Employee management FXML file not found at: " + fxmlPath);
+                return;
+            }
+            
+            logger.info("Loading employee management from: " + fxmlUrl);
+            
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             AnchorPane employeePane = loader.load();
             
-            // Get the controller and initialize it with staff data
-            EmployeeManagementController controller = loader.getController();
-            controller.getEmployeeTable().getItems().clear();
-            controller.getEmployeeTable().getItems().addAll(service.getAllUsers());
+            // Set appropriate size
+            employeePane.prefWidthProperty().bind(content.widthProperty());
+            employeePane.prefHeightProperty().bind(content.heightProperty());
             
             // Clear existing content and add new content
             content.getChildren().clear();
@@ -109,23 +146,39 @@ public class manager_MainController implements Initializable {
             logger.info("Employee management view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading employee management view", ex);
-        } */
+        }
     }
     
     /**
      * Load the floor plan view
      * @param event Action event
      */
-    
     @FXML
     void onFloorPlan(ActionEvent event) {
-      /*   try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/FloorPlanView.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load floor plan view.");
+                return;
+            }
+            
+            // Based on the project structure shown
+            String fxmlPath = "/Views/managerViews/managerFloorPlan.fxml";
+            
+            URL fxmlUrl = getClass().getResource(fxmlPath);
+            if (fxmlUrl == null) {
+                logger.severe("Floor plan FXML file not found at: " + fxmlPath);
+                return;
+            }
+            
+            logger.info("Loading floor plan from: " + fxmlUrl);
+            
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             AnchorPane floorPlanPane = loader.load();
             
-            // Get the controller and initialize it with table data
-            FloorPlanController controller = loader.getController();
-            controller.initializeFloorPlan(service.getAllTables());
+            // Set appropriate size
+            floorPlanPane.prefWidthProperty().bind(content.widthProperty());
+            floorPlanPane.prefHeightProperty().bind(content.heightProperty());
             
             // Clear existing content and add new content
             content.getChildren().clear();
@@ -134,23 +187,39 @@ public class manager_MainController implements Initializable {
             logger.info("Floor plan view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading floor plan view", ex);
-        }*/
+        }
     }
 
     /**
      * Load the menu management view
      * @param event Action event
      */
-     @FXML
+    @FXML
     void onMenu(ActionEvent event) {
-      /*   try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/MenuManagementView.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load menu view.");
+                return;
+            }
+            
+            // Based on the project structure
+            String fxmlPath = "/Views/managerViews/menuItems.fxml";
+            
+            URL fxmlUrl = getClass().getResource(fxmlPath);
+            if (fxmlUrl == null) {
+                logger.severe("Menu items FXML file not found at: " + fxmlPath);
+                return;
+            }
+            
+            logger.info("Loading menu management from: " + fxmlUrl);
+            
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             AnchorPane menuPane = loader.load();
             
-            // Get the controller and initialize it with menu data
-            MenuManagementController controller = loader.getController();
-            controller.getMenuItemTable().getItems().clear();
-            controller.getMenuItemTable().getItems().addAll(service.getAllMenuItems());
+            // Set appropriate size
+            menuPane.prefWidthProperty().bind(content.widthProperty());
+            menuPane.prefHeightProperty().bind(content.heightProperty());
             
             // Clear existing content and add new content
             content.getChildren().clear();
@@ -159,7 +228,7 @@ public class manager_MainController implements Initializable {
             logger.info("Menu management view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading menu management view", ex);
-        }*/
+        }
     }
 
     /**
@@ -168,13 +237,30 @@ public class manager_MainController implements Initializable {
      */
     @FXML
     void onReport(ActionEvent event) {
-    /*   try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/ReportingView.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load report view.");
+                return;
+            }
+            
+            // Based on the project structure
+            String fxmlPath = "/Views/managerViews/report-view.fxml";
+            
+            URL fxmlUrl = getClass().getResource(fxmlPath);
+            if (fxmlUrl == null) {
+                logger.severe("Reporting FXML file not found at: " + fxmlPath);
+                return;
+            }
+            
+            logger.info("Loading reporting view from: " + fxmlUrl);
+            
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             AnchorPane reportPane = loader.load();
             
-            // Get the controller and initialize it with necessary data
-            ReportingController controller = loader.getController();
-            controller.initializeReports();
+            // Set appropriate size
+            reportPane.prefWidthProperty().bind(content.widthProperty());
+            reportPane.prefHeightProperty().bind(content.heightProperty());
             
             // Clear existing content and add new content
             content.getChildren().clear();
@@ -183,8 +269,8 @@ public class manager_MainController implements Initializable {
             logger.info("Reporting view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading reporting view", ex);
-        }*/
-    }  
+        }
+    }
     
     /**
      * Load the account management view
@@ -192,13 +278,30 @@ public class manager_MainController implements Initializable {
      */
     @FXML
     void onAccount(ActionEvent event) {
-    /*   try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Manager/AccountView.fxml"));
+        try {
+            // Check if the content pane is available
+            if (content == null) {
+                logger.warning("Content pane is null. Cannot load account view.");
+                return;
+            }
+            
+            // Based on the project structure
+            String fxmlPath = "/Views/managerViews/account-view.fxml";
+            
+            URL fxmlUrl = getClass().getResource(fxmlPath);
+            if (fxmlUrl == null) {
+                logger.severe("Account FXML file not found at: " + fxmlPath);
+                return;
+            }
+            
+            logger.info("Loading account view from: " + fxmlUrl);
+            
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             AnchorPane accountPane = loader.load();
             
-            // Get the controller and initialize it with user data
-            AccountController controller = loader.getController();
-            controller.setUserData(currentUser);
+            // Set appropriate size
+            accountPane.prefWidthProperty().bind(content.widthProperty());
+            accountPane.prefHeightProperty().bind(content.heightProperty());
             
             // Clear existing content and add new content
             content.getChildren().clear();
@@ -207,7 +310,6 @@ public class manager_MainController implements Initializable {
             logger.info("Account view loaded successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading account view", ex);
-        } */
+        }
     }
-
 }

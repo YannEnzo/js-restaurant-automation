@@ -32,22 +32,6 @@ public class main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/Views/login.fxml"));
         
         Scene scene = new Scene(root);
-        /*root.setOnMousePressed((MouseEvent event) ->{
-            x = event.getSceneX();
-            y = event.getSceneY();
-        });
-        root.setOnMouseDragged((MouseEvent event) ->{
-            stage.setX(event.getScreenX()-x);
-            stage.setY(event.getScreenY()-y);
-           stage.setOpacity(.8);
-        });
-        
-        root.setOnMouseDragged((MouseEvent event)->{
-            stage.setOpacity(1);
-        });
-        
-        stage.initStyle(StageStyle.TRANSPARENT);
-        */
         stage.setScene(scene);
        // stage.getIcons().add(new Image(Main.class.getResourceAsStream("/Resources/Images/logo.jpg")));
         stage.setResizable(false);

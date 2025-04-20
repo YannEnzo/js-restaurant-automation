@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onTouchReleased="#search" prefHeight="723.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.manager_EmployeeTimeController">
+   <children>
+      <TableView fx:id="nodeTable" layoutX="74.0" layoutY="151.0" prefHeight="503.0" prefWidth="949.0" style="-fx-background-radius: 30px; -fx-background-color: #b4dff7; -fx-border-color: transparent;">
+        <columns>
+          <TableColumn fx:id="dateCol" prefWidth="262.0" style="-fx-background-radius: 20px 0px 0px 0px; -fx-border-color: transparent;" text="Date" />
+          <TableColumn fx:id="clockInCol" prefWidth="250.0" text="Clock In" />
+            <TableColumn fx:id="clockOutCol" prefWidth="252.0" text="Clock Out" />
+            <TableColumn fx:id="hoursWorkedCol" prefWidth="183.0" text="Hours worked" />
+        </columns>
+      </TableView>
+      <Label layoutX="45.0" layoutY="28.0" text="Employee Timesheet" textFill="#3399ff">
+         <font>
+            <Font name="OCR A Extended" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="682.0" layoutY="37.0" prefHeight="21.0" prefWidth="103.0" text="Week Of:" textFill="#3399ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="weekDisplay" layoutX="814.0" layoutY="37.0" prefHeight="21.0" prefWidth="266.0" text="this day - this day" textFill="#3399ff">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="empName" layoutX="63.0" layoutY="83.0" prefHeight="27.0" prefWidth="205.0" text="Employee Name" textFill="#646465">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="empId" layoutX="63.0" layoutY="110.0" prefHeight="27.0" prefWidth="205.0" text="Employee ID" textFill="#787979">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="664.0" prefHeight="27.0" prefWidth="205.0" text="Total hours: " textFill="#787979">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalHours" layoutX="883.0" layoutY="664.0" prefHeight="27.0" prefWidth="205.0" text="37 hours" textFill="#787979">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

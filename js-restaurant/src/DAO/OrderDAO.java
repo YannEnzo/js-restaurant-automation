@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -572,4 +573,63 @@ public class OrderDAO {
             logger.log(Level.WARNING, "Error closing database resources", ex);
         }
     }
+    /**
+ * Get total revenue for a specific day
+ * @param date The date to calculate revenue for
+ * @return Total revenue amount
+ */
+public double getDailyRevenue(LocalDate date) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = dbConnection.getConnection();
+        String sql = "SELECT SUM(total_amount) FROM `order` " +
+                     "WHERE DATE(order_datetime) = ? AND status = 'PAID'";
+        stmt = conn.prepareStatement(sql);
+        stmt.setDate(1, java.sql.Date.valueOf(date));
+        rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            return rs.getDouble(1);
+        }
+        return 0.0;
+    } catch (SQLException ex) {
+        logger.log(Level.SEVERE, "Error retrieving daily revenue for: " + date, ex);
+        throw ex;
+    } finally {
+        closeResources(conn, stmt, rs);
+    }
+}
+
+/**
+ * Get total number of customers for a specific day
+ * @param date The date to count customers for
+ * @return Customer count
+ */
+public int getDailyCustomerCount(LocalDate date) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = dbConnection.getConnection();
+        String sql = "SELECT COUNT(DISTINCT order_id) FROM `order` " +
+                     "WHERE DATE(order_datetime) = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setDate(1, java.sql.Date.valueOf(date));
+        rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+        return 0;
+    } catch (SQLException ex) {
+        logger.log(Level.SEVERE, "Error retrieving daily customer count for: " + date, ex);
+        throw ex;
+    } finally {
+        closeResources(conn, stmt, rs);
+    }
+}
 }

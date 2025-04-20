@@ -4,6 +4,7 @@ import DAO.UserDAO;
 import Model.User;
 import DAO.RestaurantService;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +35,10 @@ public class LoginController {
     private static final int MAX_LOGIN_ATTEMPTS = 3;
     private static final int LOCKOUT_DURATION_SECONDS = 30;
     
+    // Default window dimensions
+    private static final double DEFAULT_WIDTH = 1400;
+    private static final double DEFAULT_HEIGHT = 800;
+    
     @FXML
     private TextField username;
     
@@ -60,16 +65,19 @@ public class LoginController {
         // Clear any existing error messages
         if (errorMessage != null) {
             errorMessage.setText("");
+            
+            // Add listeners to input fields to clear error message when user types
+            username.textProperty().addListener((observable, oldValue, newValue) -> {
+                errorMessage.setText("");
+            });
+            
+            password.textProperty().addListener((observable, oldValue, newValue) -> {
+                errorMessage.setText("");
+            });
+        } else {
+            // Log warning if errorMessage Label is not found in FXML
+            logger.warning("Error message label not found in FXML. Check your FXML file.");
         }
-        
-        // Add listeners to input fields to clear error message when user types
-        username.textProperty().addListener((observable, oldValue, newValue) -> {
-            errorMessage.setText("");
-        });
-        
-        password.textProperty().addListener((observable, oldValue, newValue) -> {
-            errorMessage.setText("");
-        });
     }
     
     /**
@@ -167,7 +175,7 @@ public class LoginController {
             showError("Database error. Please try again later.", Color.RED);
         } catch (Exception ex) {
             logger.log(Level.SEVERE, "Unexpected error during login", ex);
-            showError("An unexpected errosr occurred. Please try again.", Color.RED);
+            showError("An unexpected error occurred. Please try again.", Color.RED);
         }
     }
     
@@ -195,8 +203,10 @@ public class LoginController {
             
             pause.setOnFinished(e -> {
                 loginButton.setDisable(false);
-                errorMessage.setText("Account unlocked. You may try again.");
-                errorMessage.setTextFill(Color.GREEN);
+                if (errorMessage != null) {
+                    errorMessage.setText("Account unlocked. You may try again.");
+                    errorMessage.setTextFill(Color.GREEN);
+                }
             });
             
             pause.play();
@@ -245,25 +255,35 @@ public class LoginController {
                     fxmlFile = "/Views/managerViews/manager_Main.fxml";
                     title = "Manager Dashboard - " + user.getFullName();
                     break;
-            /*    case "WAITER":
-                    fxmlFile = "/Views/WaiterDashboard.fxml";
+                case "WAITER":
+                    fxmlFile = "/Views/waiterViews/WaiterDashboard.fxml";
                     title = "Waiter Dashboard - " + user.getFullName();
                     break;
                 case "COOK":
-                    fxmlFile = "/Views/KitchenView.fxml";
+                    fxmlFile = "/Views/cookViews/KitchenView.fxml";
                     title = "Kitchen View - " + user.getFullName();
                     break;
                 case "BUSBOY":
-                    fxmlFile = "/Views/BusboyView.fxml";
+                    fxmlFile = "/Views/busboyViews/BusboyView.fxml";
                     title = "Busboy View - " + user.getFullName();
-                    break;*/
+                    break;
                 default:
                     showError("Unknown user role: " + user.getRole(), Color.RED);
                     return;
             } 
             
+            // Check if the FXML file exists
+            URL fxmlUrl = getClass().getResource(fxmlFile);
+            if (fxmlUrl == null) {
+                logger.log(Level.SEVERE, "FXML file not found: " + fxmlFile);
+                showError("Error: View file not found. Please contact your administrator.", Color.RED);
+                return;
+            }
+            
+            logger.info("Loading view from: " + fxmlUrl);
+            
             // Load the appropriate view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
             Parent root = loader.load();
             
             // If the controller needs the user object, pass it
@@ -275,14 +295,21 @@ public class LoginController {
             // Create and show new stage
             Stage stage = new Stage();
             stage.setTitle(title);
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.setMaximized(true);
+            
+            // Set up the scene with explicit width and height
+            Scene scene = new Scene(root, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+            stage.setScene(scene);
+            
+            // Explicitly set properties to prevent full-screen behavior
+            stage.setMaximized(false);
+            
+            // Show the stage
             stage.show();
             
             // Close the login stage after successful login and navigation
             loginStage.close();
             
+            logger.info("Redirected to role-based view successfully");
         } catch (IOException ex) {
             logger.log(Level.SEVERE, "Error loading view", ex);
             showError("Error loading application view: " + ex.getMessage(), Color.RED);

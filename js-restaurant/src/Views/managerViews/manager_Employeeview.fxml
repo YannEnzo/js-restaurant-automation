@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onTouchReleased="#search" prefHeight="723.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.manager_EmployeeviewController">
+   <children>
+      <TableView fx:id="nodeTable" layoutX="74.0" layoutY="185.0" prefHeight="421.0" prefWidth="949.0" style="-fx-background-radius: 30px; -fx-background-color: #b4dff7; -fx-border-color: transparent;">
+        <columns>
+          <TableColumn fx:id="idNumberCol" prefWidth="160.6666717529297" style="-fx-background-radius: 20px 0px 0px 0px; -fx-border-color: transparent;" text="ID" />
+          <TableColumn fx:id="NameCol" prefWidth="265.6666564941406" text="Name" />
+            <TableColumn fx:id="roleCol" prefWidth="148.33334350585938" text="Role" />
+            <TableColumn fx:id="contactCol" prefWidth="236.6666259765625" text="Contact" />
+            <TableColumn fx:id="statusCol" prefWidth="129.3333740234375" text="Status" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="976.0" layoutY="609.0" onAction="#onDelete" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: #da2525; -fx-background-radius: 40PX;" text="." textFill="#ff0101">
+         <font>
+            <Font name="MS Reference Specialty" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="785.0" layoutY="610.0" onAction="#onAdd" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: #50ff3d; -fx-background-radius: 40PX;" text=";" textFill="WHITE">
+         <font>
+            <Font name="MS Reference Specialty" size="18.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="800.0" layoutY="652.0" size="35" />
+      <JFXButton layoutX="881.0" layoutY="609.0" onAction="#onEdit" prefHeight="59.0" prefWidth="57.0" style="-fx-background-color: #3399ff; -fx-background-radius: 40PX;" text="." textFill="WHITE">
+         <font>
+            <Font name="MS Reference Specialty" size="18.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH" layoutX="990.0" layoutY="652.0" size="35" />
+      <FontAwesomeIconView fill="WHITE" glyphName="EDIT" layoutX="895.0" layoutY="652.0" size="35" text="" />
+      <JFXTextField fx:id="searchItems" layoutX="620.0" layoutY="113.0" onKeyReleased="#search" prefHeight="38.0" prefWidth="455.0" promptText="Search Employees..." style="-fx-background-radius: 10px; -fx-border-width: 0px 0px 0px 0px;">
+         <font>
+            <Font size="19.0" />
+         </font></JFXTextField>
+      <FontAwesomeIconView fill="#3399ff" glyphName="SEARCH" layoutX="1043.0" layoutY="141.0" size="28" text="" />
+      <JFXButton alignment="BOTTOM_CENTER" layoutX="81.0" layoutY="623.0" onAction="#onViewTimeSheet" prefHeight="36.0" prefWidth="319.0" style="-fx-background-color: #33a127; -fx-background-radius: 30px;" text="View TimeSheet" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="30.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="88.0" layoutY="53.0" text="Manage Employees" textFill="#3399ff">
+         <font>
+            <Font name="OCR A Extended" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

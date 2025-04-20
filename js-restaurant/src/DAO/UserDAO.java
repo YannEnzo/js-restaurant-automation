@@ -14,7 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 
 /**
@@ -172,7 +174,73 @@ public class UserDAO extends BaseDAO<User> {
             closeResources(conn, stmt, null);
         }
     }
+    /**
+ * Update user with a new password
+ * @param user User to update
+ * @param newPassword New password
+ * @return true if successful, false otherwise
+ */
+public boolean updateWithPassword(User user, String newPassword) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
     
+    try {
+        conn = dbManager.getConnection();
+        String sql = "UPDATE user SET username = ?, first_name = ?, last_name = ?, " +
+                    "role = ?, contact_number = ?, is_active = ?, password = ? WHERE user_id = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getFirstName());
+        stmt.setString(3, user.getLastName());
+        stmt.setString(4, user.getRole());
+        stmt.setString(5, user.getContactNumber());
+        stmt.setBoolean(6, user.isActive());
+        stmt.setString(7, newPassword); // In production, this should be hashed!
+        stmt.setString(8, user.getUserId());
+        
+        int rowsAffected = stmt.executeUpdate();
+        return rowsAffected > 0;
+    } catch (SQLException e) {
+        logger.log(Level.SEVERE, "Error updating user with password: " + user.getUserId(), e);
+        throw e;
+    } finally {
+        closeResources(conn, stmt, null);
+    }
+}
+
+/**
+ * Add a new user with password
+ * @param user User to add
+ * @param password Password
+ * @return true if successful, false otherwise
+ */
+public boolean addWithPassword(User user, String password) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    
+    try {
+        conn = dbManager.getConnection();
+        String sql = "INSERT INTO user (user_id, username, password, first_name, last_name, " +
+                    "role, contact_number, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, user.getUserId());
+        stmt.setString(2, user.getUsername());
+        stmt.setString(3, password); // In production, this should be hashed!
+        stmt.setString(4, user.getFirstName());
+        stmt.setString(5, user.getLastName());
+        stmt.setString(6, user.getRole());
+        stmt.setString(7, user.getContactNumber());
+        stmt.setBoolean(8, user.isActive());
+        
+        int rowsAffected = stmt.executeUpdate();
+        return rowsAffected > 0;
+    } catch (SQLException e) {
+        logger.log(Level.SEVERE, "Error adding user with password: " + user.getUserId(), e);
+        throw e;
+    } finally {
+        closeResources(conn, stmt, null);
+    }
+}
     @Override
     public boolean delete(String id) throws SQLException {
         Connection conn = null;
@@ -271,4 +339,32 @@ public class UserDAO extends BaseDAO<User> {
         
         return new User(userId, username, firstName, lastName, role, contactNumber, isActive);
     }
+    /**
+ * Get staff count grouped by role
+ * @return Map with role as key and count as value
+ */
+public Map<String, Integer> getStaffCountByRole() throws SQLException {
+    Map<String, Integer> roleCounts = new HashMap<>();
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = dbManager.getConnection();
+        stmt = conn.createStatement();
+        String sql = "SELECT role, COUNT(*) as count FROM user GROUP BY role";
+        rs = stmt.executeQuery(sql);
+        
+        while (rs.next()) {
+            roleCounts.put(rs.getString("role"), rs.getInt("count"));
+        }
+    } catch (SQLException e) {
+        logger.log(Level.SEVERE, "Error retrieving staff count by role", e);
+        throw e;
+    } finally {
+        closeResources(conn, stmt, rs);
+    }
+    
+    return roleCounts;
+}
 }
