@@ -1,72 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Waiter.waiterCashPaymentController">
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane layoutY="47.0" prefHeight="353.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
+                <AnchorPane layoutY="55.0" prefHeight="670.0" prefWidth="1102.0" style="-fx-background-color: #FFFFFF;">
                     <children>
-                        <Button layoutX="14.0" layoutY="302.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #1155cc;" text="Return" textFill="WHITE">
+                        <Button fx:id="returnButton" layoutX="14.0" layoutY="588.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="190.0" style="-fx-background-color: #1155cc;" text="Return" textFill="WHITE">
                             <font>
-                                <Font size="16.0" />
+                                <Font size="32.0" />
                             </font>
                         </Button>
-                        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="282.0" prefWidth="235.0" style="-fx-background-color: #efefef;">
+                        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="566.0" prefWidth="596.0" style="-fx-background-color: #efefef;">
                             <children>
-                                <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cheque">
+                                <Text layoutX="5.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cheque">
                                     <font>
-                                        <Font size="16.0" />
+                                        <Font size="32.0" />
                                     </font>
                                 </Text>
+                                <TextArea fx:id="chequeArea" layoutX="14.0" layoutY="47.0" prefHeight="511.0" prefWidth="570.0">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font></TextArea>
                             </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="279.0" layoutY="19.0" prefHeight="282.0" prefWidth="307.0" style="-fx-background-color: #efefef;">
+                        <AnchorPane layoutX="621.0" layoutY="14.0" prefHeight="569.0" prefWidth="466.0" style="-fx-background-color: #efefef;">
                             <children>
-                                <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: #1155cc;" text="Card Payment" textFill="WHITE">
+                                <Button fx:id="cardPaymentButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="218.0" style="-fx-background-color: #1155cc;" text="Card Payment" textFill="WHITE">
                                     <font>
-                                        <Font size="16.0" />
+                                        <Font size="28.0" />
                                     </font>
                                 </Button>
-                                <Button layoutX="169.0" layoutY="7.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="124.0" style="-fx-background-color: #073763;" text="Cash Payment" textFill="WHITE">
+                                <Button fx:id="cashPaymentButton" layoutX="230.0" layoutY="14.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="230.0" style="-fx-background-color: #073763;" text="Cash Payment" textFill="WHITE">
                                     <font>
-                                        <Font size="16.0" />
+                                        <Font size="28.0" />
                                     </font>
                                 </Button>
-                                <Text layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Amount Given">
+                                <Text layoutX="32.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash Amount">
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font size="28.0" />
                                     </font>
                                 </Text>
-                                <TextField layoutX="16.0" layoutY="114.0" prefHeight="26.0" prefWidth="275.0" />
-                                <Text layoutX="16.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change to return:">
+                                <TextField fx:id="cashAmountField" layoutX="22.0" layoutY="216.0" prefHeight="44.0" prefWidth="418.0" />
+                                <Text layoutX="32.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change to be returned:">
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font size="28.0" />
                                     </font>
                                 </Text>
-                        <Text layoutX="138.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder Amount">
+                        <Text fx:id="changeText" layoutX="32.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placeholder Amount">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="28.0" />
                            </font>
                         </Text>
                             </children>
                         </AnchorPane>
-                        <Button layoutX="506.0" layoutY="302.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" style="-fx-background-color: #1155cc;" text="Pay" textFill="WHITE">
+                        <Button fx:id="payButton" layoutX="972.0" layoutY="588.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="115.0" style="-fx-background-color: #1155cc;" text="Pay" textFill="WHITE">
                             <font>
-                                <Font size="16.0" />
+                                <Font size="32.0" />
                             </font>
                         </Button>
                     </children></AnchorPane>
-                <AnchorPane layoutX="182.0" layoutY="19.0" prefHeight="20.0" prefWidth="52.0" style="-fx-background-color: #ffb02e;" />
-                <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Table Placeholder">
+                <AnchorPane fx:id="tableStatusIndicator" layoutX="358.0" layoutY="4.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffb02e;" />
+                <Text fx:id="tableIdentifier" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewing Table Placeholder">
                     <font>
-                        <Font size="14.0" />
+                        <Font size="29.0" />
                     </font>
                 </Text>
             </children>
