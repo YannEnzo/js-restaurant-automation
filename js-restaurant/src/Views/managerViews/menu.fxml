@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="menuPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="723.0" minWidth="1102.0" prefHeight="723.0" prefWidth="1102.0" stylesheets="@../../styles/manager.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.MenuController">
+   <children>
+      <VBox layoutX="0.0" layoutY="0.0" prefHeight="723.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Title and Add Button -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label styleClass="heading-label" stylesheets="@manager.css" text="Menu Management" textFill="#2c44ff">
+                     <font>
+                        <Font name="Verdana" size="28.0" />
+                     </font>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddMenuItem" styleClass="add-button" stylesheets="@manager.css" text="+ Add Menu Item" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <!-- Category Filter Buttons -->
+            <HBox fx:id="categoryButtonsBox" alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Button fx:id="allButton" mnemonicParsing="false" styleClass="category-button" text="All Items" />
+                  <Button fx:id="appetizersButton" mnemonicParsing="false" styleClass="category-button" text="Appetizers" />
+                  <Button fx:id="saladsButton" mnemonicParsing="false" styleClass="category-button" text="Salads" />
+                  <Button fx:id="entreesButton" mnemonicParsing="false" styleClass="category-button" text="Entrees" />
+                  <Button fx:id="sandwichesButton" mnemonicParsing="false" styleClass="category-button" text="Sandwiches" />
+                  <Button fx:id="sidesButton" mnemonicParsing="false" styleClass="category-button" text="Sides" />
+                  <Button fx:id="burgersButton" mnemonicParsing="false" styleClass="category-button" text="Burgers" />
+                  <Button fx:id="beveragesButton" mnemonicParsing="false" styleClass="category-button" text="Beverages" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <!-- Search Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <JFXTextField fx:id="searchField" onKeyTyped="#onSearch" prefHeight="40.0" prefWidth="400.0" promptText="Search Menu items..." />
+                  <Button mnemonicParsing="false" onAction="#onSearchClick" prefHeight="40.0" prefWidth="120.0" styleClass="search-button" stylesheets="@manager.css" text="Search" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <!-- Table View -->
+            <TableView fx:id="menuTable" prefHeight="500.0" stylesheets="@manager.css" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="nameColumn" prefWidth="400.0" text="Item Name" />
+                  <TableColumn fx:id="categoryColumn" prefWidth="350.0" text="Category" />
+                  <TableColumn fx:id="priceColumn" prefWidth="311.0" text="Price" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </TableView>
+            
+            <!-- Action Buttons (outside table) -->
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEditMenuItem" prefHeight="40.0" prefWidth="120.0" styleClass="edit-button" text="Edit" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteMenuItem" prefHeight="40.0" prefWidth="120.0" styleClass="delete-button" text="Delete" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

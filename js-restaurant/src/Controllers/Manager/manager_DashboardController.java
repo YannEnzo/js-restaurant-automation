@@ -18,7 +18,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Parent;
-
+import Controllers.Manager.manager_EmployeeviewController;
+import Controllers.Manager.manager_floorController;
+import Controllers.Manager.ReportController;
 public class manager_DashboardController implements Initializable {
     private static final Logger logger = Logger.getLogger(manager_DashboardController.class.getName());
     private final RestaurantService service = RestaurantService.getInstance();
@@ -218,36 +220,126 @@ public class manager_DashboardController implements Initializable {
             logger.log(Level.SEVERE, "Error loading dashboard data", e);
         }
     }
+// Add this field to manager_DashboardController
+private AnchorPane content;
 
-    /**
-     * Navigate to employee time management screen
-     * @param event ActionEvent
-     */
-    @FXML
-    void onEmployee(ActionEvent event) {
-        logger.info("Employee time button clicked");
-        // This will be handled by the main controller's navigation system
+// Add this method to manager_DashboardController
+public void setContentPane(AnchorPane content) {
+    this.content = content;
+}
+/**
+ * Load the employee management view
+ * @param event Action event
+ */
+@FXML
+void onEmployee(ActionEvent event) {
+    try {
+        // Check if the content pane is available
+        if (content == null) {
+            logger.warning("Content pane is null. Cannot load employee time view.");
+            return;
+        }
+        
+        String fxmlPath = "/Views/managerViews/manager_Employeeview.fxml";
+        
+        URL fxmlUrl = getClass().getResource(fxmlPath);
+        if (fxmlUrl == null) {
+            logger.severe("Employee time FXML file not found at: " + fxmlPath);
+            return;
+        }
+        
+        logger.info("Loading employee time from: " + fxmlUrl);
+        
+        FXMLLoader loader = new FXMLLoader(fxmlUrl);
+        AnchorPane employeeTimePane = loader.load();
+        
+        // Set appropriate size
+        employeeTimePane.prefWidthProperty().bind(content.widthProperty());
+        employeeTimePane.prefHeightProperty().bind(content.heightProperty());
+        
+        // Clear existing content and add new content
+        content.getChildren().clear();
+        content.getChildren().add(employeeTimePane);
+        
+        logger.info("Employee time view loaded successfully");
+    } catch (IOException ex) {
+        logger.log(Level.SEVERE, "Error loading employee time view", ex);
     }
+}
 
-    /**
-     * Navigate to floor plan screen
-     * @param event ActionEvent
-     */
-    @FXML
-    void onFloorPlan(ActionEvent event) {
-        logger.info("Floor plan button clicked");
-        // This will be handled by the main controller's navigation system
+@FXML
+void onFloorPlan(ActionEvent event) {
+    try {
+        // Check if the content pane is available
+        if (content == null) {
+            logger.warning("Content pane is null. Cannot load floor plan view.");
+            return;
+        }
+        
+        String fxmlPath = "/Views/managerViews/manager_floorPlan.fxml";
+        
+        URL fxmlUrl = getClass().getResource(fxmlPath);
+        if (fxmlUrl == null) {
+            logger.severe("Floor plan FXML file not found at: " + fxmlPath);
+            return;
+        }
+        
+        logger.info("Loading floor plan from: " + fxmlUrl);
+        
+        FXMLLoader loader = new FXMLLoader(fxmlUrl);
+        Parent floorPlanPane = loader.load();
+        
+        // Set appropriate size if it's an AnchorPane
+        if (floorPlanPane instanceof AnchorPane) {
+            ((AnchorPane) floorPlanPane).prefWidthProperty().bind(content.widthProperty());
+            ((AnchorPane) floorPlanPane).prefHeightProperty().bind(content.heightProperty());
+        }
+        
+        // Clear existing content and add new content
+        content.getChildren().clear();
+        content.getChildren().add(floorPlanPane);
+        
+        logger.info("Floor plan view loaded successfully");
+    } catch (IOException ex) {
+        logger.log(Level.SEVERE, "Error loading floor plan view", ex);
     }
+}
 
-    /**
-     * Navigate to reports screen
-     * @param event ActionEvent
-     */
-    @FXML
-    void onReport(ActionEvent event) {
-        logger.info("Report button clicked");
-        // This will be handled by the main controller's navigation system
+@FXML
+void onReport(ActionEvent event) {
+    try {
+        // Check if the content pane is available
+        if (content == null) {
+            logger.warning("Content pane is null. Cannot load report view.");
+            return;
+        }
+        
+        String fxmlPath = "/Views/managerViews/report_view.fxml";
+        
+        URL fxmlUrl = getClass().getResource(fxmlPath);
+        if (fxmlUrl == null) {
+            logger.severe("Report FXML file not found at: " + fxmlPath);
+            return;
+        }
+        
+        logger.info("Loading report view from: " + fxmlUrl);
+        
+        FXMLLoader loader = new FXMLLoader(fxmlUrl);
+        AnchorPane reportPane = loader.load();
+        
+        // Set appropriate size
+        reportPane.prefWidthProperty().bind(content.widthProperty());
+        reportPane.prefHeightProperty().bind(content.heightProperty());
+        
+        // Clear existing content and add new content
+        content.getChildren().clear();
+        content.getChildren().add(reportPane);
+        
+        logger.info("Report view loaded successfully");
+    } catch (IOException ex) {
+        logger.log(Level.SEVERE, "Error loading report view", ex);
     }
+}
     
     /**
      * Refresh dashboard data

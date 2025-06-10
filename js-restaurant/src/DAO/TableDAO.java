@@ -109,7 +109,38 @@ public class TableDAO extends BaseDAO<RestaurantTable> {
         
         return table;
     }
+    /**
+ * Get a table by its table number
+ * @param tableNumber The table number (e.g., "A1")
+ * @return The table, or null if not found
+ * @throws SQLException If a database error occurs
+ */
+public RestaurantTable getByTableNumber(String tableNumber) throws SQLException {
+    RestaurantTable table = null;
+    Connection conn = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
     
+    try {
+        conn = dbManager.getConnection();
+        String sql = "SELECT * FROM restaurant_table WHERE table_number = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, tableNumber);
+        rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            table = extractTableFromResultSet(rs);
+        }
+    } catch (SQLException e) {
+        logger.log(Level.SEVERE, "Error retrieving table by number: " + tableNumber, e);
+        throw e;
+    } finally {
+        closeResources(conn, stmt, rs);
+    }
+    
+    return table;
+}
+
     @Override
     public boolean add(RestaurantTable table) throws SQLException {
         Connection conn = null;
@@ -195,30 +226,34 @@ public class TableDAO extends BaseDAO<RestaurantTable> {
         }
     }
     
-    public boolean updateTableStatus(String tableId, String status, String userId) throws SQLException {
-        Connection conn = null;
-        PreparedStatement stmt = null;
+    public boolean updateTableStatus(String tableId, String status, String waiterId) throws SQLException {
+    Connection conn = null;
+    PreparedStatement stmt = null;
+
+    try {
+        conn = dbManager.getConnection();
+
+        // SQL query to update the status and assigned waiter (if provided)
+        String sql = "UPDATE restaurant_table SET status = ?, assigned_waiter_id = ? WHERE table_id = ?";
+        stmt = conn.prepareStatement(sql);
         
-        try {
-            conn = dbManager.getConnection();
-            String sql = "{CALL update_table_status(?, ?, ?)}";
-            stmt = conn.prepareCall(sql);
-            stmt.setString(1, tableId);
-            stmt.setString(2, status);
-            stmt.setString(3, userId);
-            
-            stmt.execute();
-            
-            // Notify observers about the table status change
-            notifyTableStatusChanged(tableId, status);
-            return true;
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error updating table status: " + tableId, e);
-            throw e;
-        } finally {
-            closeResources(conn, stmt, null);
-        }
+        // Set parameters
+        stmt.setString(1, status);           // Set the status (AVAILABLE, OCCUPIED, etc.)
+        stmt.setString(2, waiterId);          // Set the assigned waiter, or NULL if not assigned
+        stmt.setString(3, tableId);           // Identify the table to update
+
+        // Execute the update
+        int rowsAffected = stmt.executeUpdate();  
+        return rowsAffected > 0;              // Return true if the update was successful
+    } catch (SQLException ex) {
+        logger.log(Level.SEVERE, "Error updating table status", ex);
+        return false;  // Return false if an error occurred
+    } finally {
+        closeResources(conn, stmt, null);  // Always close resources after use
     }
+}
+
+
     
     public List<RestaurantTable> getTablesByStatus(String status) throws SQLException {
         List<RestaurantTable> tables = new ArrayList<>();

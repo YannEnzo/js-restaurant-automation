@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,19 +14,19 @@
    <children>
       <AnchorPane layoutX="131.0" layoutY="129.0" prefHeight="278.0" prefWidth="546.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12;">
          <children>
-            <Label layoutX="231.0" layoutY="11.0" text="Login">
-               <font>
-                  <Font name="High Tower Text" size="29.0" />
-               </font>
-            </Label>
             <Label fx:id="wrongLogin" layoutX="181.0" layoutY="44.0" textFill="#a40000">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
+            <ImageView fitHeight="117.0" fitWidth="133.0" layoutX="216.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/images/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="-3.0" prefHeight="117.0" prefWidth="770.0" style="-fx-background-color: #1e01fa;" text="   J's Restaurant" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="-3.0" prefHeight="117.0" prefWidth="770.0" style="-fx-background-color: #1e01fa;" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Maiandra GD" size="54.0" />
          </font>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1102.0" style="-fx-background-color: #d9d9d9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Waiter.WaiterTableController">
+   <top>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d9d9d9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="87.0" layoutY="11.0" text="Floor Plan" textFill="#5276ff">
+               <font>
+                  <Font name="Eras Demi ITC" size="36.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="96.0" layoutY="131.0" prefHeight="579.0" prefWidth="902.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button fx:id="tableA1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#ontableA1" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="A1" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableA2" layoutX="14.0" layoutY="107.0" mnemonicParsing="false" onAction="#ontableA2" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="A2" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableA3" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#ontableA3" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #ffb02e;" text="A3" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableA4" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onAction="#ontableA4" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="A4" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableA5" layoutX="14.0" layoutY="389.0" mnemonicParsing="false" onAction="#ontableA5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="A5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableA6" layoutX="14.0" layoutY="485.0" mnemonicParsing="false" onAction="#ontableA6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #f8312f;" text="A6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB1" layoutX="169.0" layoutY="14.0" mnemonicParsing="false" onAction="#ontableB1" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #ffb02e;" text="B1" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB2" layoutX="169.0" layoutY="107.0" mnemonicParsing="false" onAction="#ontableB2" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="B2" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB3" layoutX="169.0" layoutY="199.0" mnemonicParsing="false" onAction="#ontableB3" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="B3" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB4" layoutX="169.0" layoutY="290.0" mnemonicParsing="false" onAction="#ontableB4" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="B4" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB5" layoutX="169.0" layoutY="389.0" mnemonicParsing="false" onAction="#ontableB5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="B5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableB6" layoutX="169.0" layoutY="485.0" mnemonicParsing="false" onAction="#ontableB6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="B6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableC5" layoutX="317.0" layoutY="389.0" mnemonicParsing="false" onAction="#onontableC5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #f8312f;" text="C5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableC6" layoutX="317.0" layoutY="485.0" mnemonicParsing="false" onAction="#ontableC6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="C6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableD5" layoutX="469.0" layoutY="389.0" mnemonicParsing="false" onAction="#ontableD5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="D5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableD6" layoutX="469.0" layoutY="485.0" mnemonicParsing="false" onAction="#ontableD6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="D6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE1" layoutX="619.0" layoutY="14.0" mnemonicParsing="false" onAction="#ontableE1" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="E1" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE2" layoutX="619.0" layoutY="107.0" mnemonicParsing="false" onAction="#ontableE2" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="E2" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE3" layoutX="619.0" layoutY="199.0" mnemonicParsing="false" onAction="#ontableE3" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #f8312f;" text="E3" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE4" layoutX="619.0" layoutY="290.0" mnemonicParsing="false" onAction="#ontableE4" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="E4" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE5" layoutX="619.0" layoutY="389.0" mnemonicParsing="false" onAction="#ontableE5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="E5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableE6" layoutX="619.0" layoutY="485.0" mnemonicParsing="false" onAction="#ontableE6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="E6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF1" layoutX="768.0" layoutY="17.0" mnemonicParsing="false" onAction="#ontableF1" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #ffb02e;" text="F1" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF2" layoutX="768.0" layoutY="110.0" mnemonicParsing="false" onAction="#ontableF2" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="F2" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF3" layoutX="768.0" layoutY="202.0" mnemonicParsing="false" onAction="#ontableF3" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="F3" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF4" layoutX="768.0" layoutY="293.0" mnemonicParsing="false" onAction="#ontableF4" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="F4" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF5" layoutX="768.0" layoutY="392.0" mnemonicParsing="false" onAction="#ontableF5" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #ffb02e;" text="F5" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tableF6" layoutX="768.0" layoutY="488.0" mnemonicParsing="false" onAction="#ontableF6" prefHeight="80.0" prefWidth="120.0" style="-fx-background-color: #00d26a;" text="F6" textFill="WHITE">
+                     <font>
+                        <Font name="Myanmar Text Bold" size="25.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="317.0" layoutY="14.0" prefHeight="353.0" prefWidth="273.0" style="-fx-background-color: #d9d9d9;" />
+                  <Text layoutX="390.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S (Entrance)">
+                     <font>
+                        <Font name="Nirmala Text Bold" size="19.0" />
+                     </font>
+                  </Text>
+               </children></AnchorPane>
+            <Text layoutX="70.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Open">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="23.0" layoutY="85.0" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #00d26a;" />
+            <AnchorPane layoutX="136.0" layoutY="80.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffb02e;" />
+            <Text layoutX="189.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupied">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="315.0" layoutY="80.0" prefHeight="42.0" prefWidth="39.0" style="-fx-background-color: #f8312f;" />
+            <Text layoutX="369.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirty">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text layoutX="496.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N (Kitchen)">
+               <font>
+                  <Font name="Nirmala Text Bold" size="19.0" />
+               </font>
+            </Text>
+            <Text layoutX="315.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Table to view:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="accountButton" layoutX="960.0" layoutY="14.0" onAction="#onAccount" prefHeight="41.0" prefWidth="113.0" style="-fx-background-color: #ff3784;" text="Account" textFill="WHITE">
+               <font>
+                  <Font name="Eras Demi ITC" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="20" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="editTableStatusButton" layoutX="852.0" layoutY="80.0" onAction="#onEditTableStatus" prefHeight="45.0" prefWidth="189.0" style="-fx-background-color: #1155cc;" text="Edit Table Status" textFill="WHITE">
+               <font>
+                  <Font name="Eras Demi ITC" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="20" />
+               </graphic></JFXButton>
+            <Label layoutX="766.0" layoutY="14.0" textFill="#5276ff">
+               <font>
+                  <Font name="Eras Demi ITC" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="waiterNameLabel" layoutX="719.0" layoutY="24.0" prefHeight="42.0" prefWidth="170.0" text="John Smith Waiter">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+        </AnchorPane>
+   </top>
+</BorderPane>

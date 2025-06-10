@@ -33,7 +33,8 @@ public class main extends Application {
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
-       // stage.getIcons().add(new Image(Main.class.getResourceAsStream("/Resources/Images/logo.jpg")));
+        stage.setTitle("J's Restaurant - Login");
+        // stage.getIcons().add(new Image(main.class.getResourceAsStream("/Resources/Images/logo.png")));
         stage.setResizable(false);
         stage.show();
         

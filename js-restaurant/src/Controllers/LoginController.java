@@ -1,5 +1,7 @@
 package Controllers;
 
+import Controllers.Manager.manager_MainController;
+import Controllers.cook.CookViewController;
 import DAO.UserDAO;
 import Model.User;
 import DAO.RestaurantService;
@@ -36,8 +38,8 @@ public class LoginController {
     private static final int LOCKOUT_DURATION_SECONDS = 30;
     
     // Default window dimensions
-    private static final double DEFAULT_WIDTH = 1400;
-    private static final double DEFAULT_HEIGHT = 800;
+    private static  double DEFAULT_WIDTH = 1400;
+    private static  double DEFAULT_HEIGHT = 800;
     
     @FXML
     private TextField username;
@@ -256,16 +258,23 @@ public class LoginController {
                     title = "Manager Dashboard - " + user.getFullName();
                     break;
                 case "WAITER":
-                    fxmlFile = "/Views/waiterViews/WaiterDashboard.fxml";
+                    fxmlFile = "/Views/waiterViews/waiterTable.fxml";
                     title = "Waiter Dashboard - " + user.getFullName();
+                    DEFAULT_WIDTH = 1102;
+                    DEFAULT_HEIGHT = 782;
                     break;
                 case "COOK":
-                    fxmlFile = "/Views/cookViews/KitchenView.fxml";
+                    fxmlFile = "/Views/cook/KitchenView.fxml";
                     title = "Kitchen View - " + user.getFullName();
+                    DEFAULT_WIDTH = 1102;
+                    DEFAULT_HEIGHT = 782;
+                    CookViewController.setPendingUser(user);
                     break;
                 case "BUSBOY":
-                    fxmlFile = "/Views/busboyViews/BusboyView.fxml";
+                    fxmlFile = "/Views/busboyViews/busboyTables.fxml";
                     title = "Busboy View - " + user.getFullName();
+                    DEFAULT_WIDTH = 1102;
+                    DEFAULT_HEIGHT = 782;
                     break;
                 default:
                     showError("Unknown user role: " + user.getRole(), Color.RED);
@@ -284,13 +293,30 @@ public class LoginController {
             
             // Load the appropriate view
             FXMLLoader loader = new FXMLLoader(fxmlUrl);
-            Parent root = loader.load();
-            
-            // If the controller needs the user object, pass it
-            Object controller = loader.getController();
-            if (controller instanceof UserAwareController) {
-                ((UserAwareController) controller).setCurrentUser(user);
-            }
+Parent root = loader.load();
+
+// If the controller is a manager_MainController, set the current user
+// This should only happen for the manager role
+if (user.getRole().equals("MANAGER")) {
+    try {
+        manager_MainController mainController = loader.getController();
+        if (mainController != null) {
+            mainController.setCurrentUser(user);
+            logger.info("User passed to manager_MainController: " + user.getUsername());
+        } else {
+            logger.severe("Could not get manager_MainController from loader");
+        }
+    } catch (ClassCastException ex) {
+        logger.warning("Controller is not a manager_MainController");
+    }
+}
+
+// Pass the user to controllers that implement UserAwareController interface
+Object controller = loader.getController();
+if (controller instanceof UserAwareController) {
+    ((UserAwareController) controller).setCurrentUser(user);
+    logger.info("User passed to UserAwareController: " + user.getUsername());
+}
             
             // Create and show new stage
             Stage stage = new Stage();
@@ -334,11 +360,4 @@ public class LoginController {
             alert.showAndWait();
         }
     }
-}
-
-/**
- * Interface to be implemented by controllers that need user information
- */
-interface UserAwareController {
-    void setCurrentUser(User user);
 }

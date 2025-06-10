@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../styles/kitchen.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.cook.CookViewController">
+   <children>
+      <BorderPane prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" spacing="10.0" styleClass="header-box" BorderPane.alignment="CENTER">
+               <children>
+                  <Label styleClass="header-label" text="Kitchen Order Queue">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="timeLabel" styleClass="time-label" text="18:30">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="cookNameLabel" styleClass="user-label" text="Owen Mitchels">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXButton fx:id="accountBtn" buttonType="RAISED" onAction="#onAccount" styleClass="account-button" text="Account">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <VBox spacing="15.0" BorderPane.alignment="CENTER">
+               <children>
+                  <!-- Status Summary -->
+                  <HBox alignment="CENTER" prefHeight="100.0" spacing="20.0">
+                     <children>
+                        <VBox alignment="CENTER" styleClass="stat-box" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="pendingOrdersCount" styleClass="stat-count" text="16">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="stat-label" text="Pending Orders">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="stat-box" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="inPrepCount" styleClass="stat-count-active" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="stat-label" text="In Preparation">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="stat-box" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="readyOrdersCount" styleClass="stat-count-ready" text="2">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="stat-label" text="Ready Orders">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="stat-box" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="avgPrepTime" styleClass="stat-count-info" text="12.5">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="stat-label" text="Avg. Prep Time (min)">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  
+                  <!-- Order Tabs -->
+                  <TabPane fx:id="orderTabPane" styleClass="order-tabs" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                     <tabs>
+                        <Tab fx:id="pendingTab" text="Pending Orders">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox fx:id="pendingOrdersContainer" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                             <padding>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="inProgressTab" text="In Preparation">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox fx:id="inProgressOrdersContainer" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                             <padding>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="readyTab" text="Ready Orders">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox fx:id="readyOrdersContainer" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                             <padding>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -111,4 +111,8 @@ public class MenuItem {
                 ", isAvailable=" + isAvailable +
                 '}';
     }
+private int preparationTime; 
+    public int getPreparationTime() {
+        return preparationTime; //To change body of generated methods, choose Tools | Templates.
+    }
 }

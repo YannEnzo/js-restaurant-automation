@@ -62,7 +62,7 @@
                <children>
                   <Label fx:id="staffDetail" layoutX="15.0" layoutY="110.0" prefHeight="59.0" prefWidth="232.0" text="5 waiters, 2 busboys, 5 chefs" wrapText="true">
                      <font>
-                        <Font name="OCR A Extended" size="16.0" />
+                        <Font name="Comic Sans MS" size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="staffCount" layoutX="71.0" layoutY="56.0" prefHeight="49.0" prefWidth="123.0" text="12">

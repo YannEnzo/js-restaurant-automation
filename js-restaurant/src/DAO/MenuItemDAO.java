@@ -66,7 +66,10 @@ public class MenuItemDAO {
         
         return menuItems;
     }
-    
+    private int preparationTime; 
+    public int getPreparationTime() {
+    return preparationTime; // You should have this field in your class
+}
     /**
      * Get a menu item by ID
      * @param id Menu item ID

@@ -17,9 +17,9 @@
                <children>
                   <AnchorPane prefHeight="723.0" prefWidth="299.0" style="-fx-background-color: #29318a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ImageView fitHeight="112.0" fitWidth="114.0" layoutX="95.0" layoutY="36.0">
+                        <ImageView fitHeight="125.0" fitWidth="112.0" layoutX="91.0" layoutY="38.0">
                            <image>
-                              <Image url="@../../Resources/Images/adminlogo.png" />
+                              <Image url="@../../Resources/images/logo1.jpg" />
                            </image>
                         </ImageView>
                         <Button layoutX="37.0" layoutY="232.0" mnemonicParsing="false" onAction="#onDashboard" prefHeight="50.0" prefWidth="237.0" text="Dashboard">

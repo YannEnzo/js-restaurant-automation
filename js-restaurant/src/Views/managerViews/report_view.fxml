@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="reportPane" prefHeight="723.0" prefWidth="1102.0" stylesheets="@../../styles/manager.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Manager.ReportController">
+   <children>
+      <VBox prefHeight="723.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0">
+               <children>
+                  <Label styleClass="heading-label" text="Reports" textFill="#2c44ff">
+                     <font>
+                        <Font name="Verdana Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Label text="Date Range:" textFill="#333333">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="dateRangeCombo" prefHeight="35.0" prefWidth="180.0" promptText="Select Date Range">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <!-- Tab Pane for Different Reports -->
+            <TabPane fx:id="reportTabPane" prefHeight="643.0" prefWidth="1102.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+               <tabs>
+                  <!-- Top Sellers Tab -->
+                  <Tab fx:id="topSellersTab" text="Top Sellers">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="603.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label styleClass="form-label" text="Top Selling Items">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    
+                                    <!-- Sales Chart -->
+                                    <AnchorPane fx:id="salesChartContainer" prefHeight="450.0" prefWidth="1102.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1px;">
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </AnchorPane>
+                                    
+                                    <!-- Export Button -->
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="60.0">
+                                       <children>
+                                          <Button fx:id="exportTopSellersBtn" mnemonicParsing="false" onAction="#onExportReport" styleClass="search-button" text="📊 Export Report">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  
+                  <!-- Inventory Tab -->
+                  <Tab fx:id="inventoryTab" text="Inventory">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="603.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0">
+                                       <children>
+                                          <Label styleClass="form-label" text="Inventory Status">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="categoryFilterCombo" prefHeight="35.0" prefWidth="160.0" promptText="All Categories">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="statusFilterCombo" prefHeight="35.0" prefWidth="130.0" promptText="All Status">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Button fx:id="orderSuppliesBtn" mnemonicParsing="false" onAction="#onOrderSupplies" styleClass="add-button" text="➕ Order Supplies" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    
+                                    <!-- Inventory Table -->
+                                    <TableView fx:id="inventoryTable" prefHeight="450.0" prefWidth="1062.0">
+                                       <columns>
+                                          <TableColumn fx:id="itemNameColumn" prefWidth="280.0" text="Item Name" />
+                                          <TableColumn fx:id="categoryColumn" prefWidth="175.0" text="Category" />
+                                          <TableColumn fx:id="currentStockColumn" prefWidth="236.0" text="Current Stock" />
+                                          <TableColumn fx:id="minRequiredColumn" prefWidth="192.0" text="Min Required" />
+                                          <TableColumn fx:id="statusColumn" prefWidth="177.0" text="Status" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                    
+                                    <!-- Inventory Summary -->
+                                    <HBox alignment="CENTER" prefHeight="60.0" spacing="40.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="60.0" prefWidth="150.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1px; -fx-background-color: white;">
+                                             <children>
+                                                <Label fx:id="lowStockCount" text="5" textFill="#d32f2f">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Item Low on Stock" textFill="#333333">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="60.0" prefWidth="150.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1px; -fx-background-color: white;">
+                                             <children>
+                                                <Label fx:id="warningCount" text="3" textFill="#ffa000">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Item In Warning" textFill="#333333">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="60.0" prefWidth="150.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1px; -fx-background-color: white;">
+                                             <children>
+                                                <Label fx:id="pendingOrdersCount" text="2" textFill="#1976d2">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Pending Orders" textFill="#333333">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    
+                                    <!-- Export Button -->
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="40.0">
+                                       <children>
+                                          <Button fx:id="exportInventoryBtn" mnemonicParsing="false" onAction="#onExportReport" styleClass="search-button" text="📊 Export Report">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  
+                  <!-- Kitchen Performance Tab -->
+                  <Tab fx:id="kitchenPerformanceTab" text="Kitchen Performance">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="603.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0">
+                                       <children>
+                                          <Label styleClass="form-label" text="Preparation Time by Menu Item">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="kitchenCategoryCombo" prefHeight="35.0" prefWidth="160.0" promptText="All Categories">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="kitchenStaffCombo" prefHeight="35.0" prefWidth="130.0" promptText="All Staff">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    
+                                    <!-- Kitchen Performance Table -->
+                                    <TableView fx:id="kitchenPerformanceTable" prefHeight="500.0" prefWidth="1062.0">
+                                       <columns>
+                                          <TableColumn fx:id="menuItemColumn" prefWidth="232.0" text="Menu Item" />
+                                          <TableColumn fx:id="menuCategoryColumn" prefWidth="234.0" text="Category" />
+                                          <TableColumn fx:id="avgPrepTimeColumn" prefWidth="195.0" text="Avg Prep Time" />
+                                          <TableColumn fx:id="targetTimeColumn" prefWidth="211.0" text="Target Time" />
+                                          <TableColumn fx:id="prepStatusColumn" prefWidth="186.0" text="Status" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                    
+                                    <!-- Export Button -->
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="60.0">
+                                       <children>
+                                          <Button fx:id="exportKitchenBtn" mnemonicParsing="false" onAction="#onExportReport" styleClass="search-button" text="📊 Export Report">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

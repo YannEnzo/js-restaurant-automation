@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -190,58 +191,72 @@ public class TimeRecordDAO {
         }
     }
     
-    /**
-     * Update a time record (clock out)
-     * @param userId Employee's user ID
-     * @return true if successful, false otherwise
-     */
-    public boolean clockOut(String userId) throws SQLException {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        PreparedStatement updateStmt = null;
-        ResultSet rs = null;
+/**
+ * Clock out an employee directly
+ * @param userId Employee ID to clock out
+ * @return true if successful, false otherwise
+ * @throws SQLException on database error
+ */
+public boolean clockOut(String userId) throws SQLException {
+    Connection conn = null;
+    PreparedStatement findStmt = null;
+    PreparedStatement updateStmt = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = dbManager.getConnection();
         
-        try {
-            conn = dbManager.getConnection();
+        System.out.println("Attempting to clock out user: " + userId);
+        
+        // Find the most recent clock-in without a clock-out
+        String findSql = "SELECT time_clock_id, clock_in FROM time_clock " +
+                        "WHERE user_id = ? AND clock_out IS NULL " +
+                        "ORDER BY clock_in DESC LIMIT 1";
+        findStmt = conn.prepareStatement(findSql);
+        findStmt.setString(1, userId);
+        rs = findStmt.executeQuery();
+        
+        if (rs.next()) {
+            int recordId = rs.getInt("time_clock_id");
+            java.sql.Timestamp clockInTimestamp = rs.getTimestamp("clock_in");
+            LocalDateTime clockInTime = clockInTimestamp.toLocalDateTime();
+            LocalDateTime clockOutTime = LocalDateTime.now();
             
-            // Find the most recent clock-in without a clock-out
-            String findSql = "SELECT * FROM time_clock WHERE user_id = ? AND clock_out IS NULL " +
-                             "ORDER BY clock_in DESC LIMIT 1";
-            stmt = conn.prepareStatement(findSql);
-            stmt.setString(1, userId);
-            rs = stmt.executeQuery();
+            System.out.println("Found open time record: ID=" + recordId + ", ClockIn=" + clockInTime);
             
-            if (rs.next()) {
-                int recordId = rs.getInt("time_clock_id");
-                LocalDateTime clockInTime = rs.getTimestamp("clock_in").toLocalDateTime();
-                LocalDateTime clockOutTime = LocalDateTime.now();
-                
-                // Calculate hours worked
-                double hoursWorked = calculateHoursWorked(clockInTime, clockOutTime);
-                
-                // Update the record with clock-out time and hours worked
-                String updateSql = "UPDATE time_clock SET clock_out = ?, total_hours = ? " +
-                                   "WHERE time_clock_id = ?";
-                updateStmt = conn.prepareStatement(updateSql);
-                updateStmt.setTimestamp(1, Timestamp.valueOf(clockOutTime));
-                updateStmt.setDouble(2, hoursWorked);
-                updateStmt.setInt(3, recordId);
-                
-                int rowsAffected = updateStmt.executeUpdate();
-                return rowsAffected > 0;
-            }
+            // Calculate hours worked (as a decimal)
+            Duration duration = Duration.between(clockInTime, clockOutTime);
+            double hoursWorked = duration.toHours() + (duration.toMinutes() % 60) / 60.0;
             
-            return false; // No open clock-in found
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error clocking out employee: " + userId, e);
-            throw e;
-        } finally {
-            if (rs != null) rs.close();
-            if (stmt != null) stmt.close();
-            if (updateStmt != null) updateStmt.close();
-            if (conn != null) conn.close();
+            // Update the record with clock-out time and hours worked
+            String updateSql = "UPDATE time_clock SET clock_out = ?, total_hours = ? " +
+                            "WHERE time_clock_id = ?";
+            updateStmt = conn.prepareStatement(updateSql);
+            updateStmt.setTimestamp(1, java.sql.Timestamp.valueOf(clockOutTime));
+            updateStmt.setDouble(2, hoursWorked);
+            updateStmt.setInt(3, recordId);
+            
+            int rowsAffected = updateStmt.executeUpdate();
+            
+            System.out.println("Clock out update affected " + rowsAffected + " rows");
+            System.out.println("Hours worked: " + hoursWorked);
+            
+            return rowsAffected > 0;
+        } else {
+            System.out.println("No open time records found for user: " + userId);
+            return false;
         }
+    } catch (SQLException ex) {
+        logger.log(Level.SEVERE, "Error clocking out user: " + userId, ex);
+        ex.printStackTrace();
+        throw ex;
+    } finally {
+        if (rs != null) try { rs.close(); } catch (SQLException e) { }
+        if (findStmt != null) try { findStmt.close(); } catch (SQLException e) { }
+        if (updateStmt != null) try { updateStmt.close(); } catch (SQLException e) { }
+        if (conn != null) try { conn.close(); } catch (SQLException e) { }
     }
+}
     
     /**
      * Calculate hours worked between clock in and clock out

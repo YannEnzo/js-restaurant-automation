@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Waiter.ReceiptViewController">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="receiptTextArea" layoutX="20.0" layoutY="20.0" prefHeight="520.0" prefWidth="360.0" style="-fx-background-color: #f8f8f8; -fx-border-color: #dddddd;">
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font>
+            </TextArea>
+            
+            <!-- Action buttons -->
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="550.0" prefHeight="40.0" prefWidth="360.0" spacing="20.0">
+               <children>
+                  <Button fx:id="printButton" mnemonicParsing="false" onAction="#onPrint" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1976d2;" text="Print Receipt" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="closeButton" mnemonicParsing="false" onAction="#onClose" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #555555;" text="Close" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

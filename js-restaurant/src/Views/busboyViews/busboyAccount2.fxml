@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Busboy.BusboyAccountController">
+    <children>
+        <VBox alignment="TOP_CENTER" layoutX="0.0" layoutY="0.0" prefHeight="800.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1400.0" style="-fx-background-color: #2196F3;">
+                    <children>
+                        <Label text="ACCOUNT - BUSBOY" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1400.0">
+                    <children>
+                        <Pane prefHeight="50.0" prefWidth="800.0" />
+                        <Label fx:id="headerLabel" text="Michael Jordan | Busboy">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                
+                <!-- User info panel -->
+                <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1400.0">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="300.0" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="800.0" style="-fx-border-color: #795548; -fx-border-radius: 20; -fx-border-width: 2;">
+                            <children>
+                                <Label text="User Information" textFill="#795548">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0">
+                                    <children>
+                                        <Text fill="#c0c0c0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name:">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <Pane prefHeight="40.0" prefWidth="20.0" />
+                                        <Text fx:id="nameLine" strokeType="OUTSIDE" strokeWidth="0.0" text="Michael Jordan">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0">
+                                    <children>
+                                        <Text fill="#c0c0c0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <Pane prefHeight="40.0" prefWidth="20.0" />
+                                        <Text fx:id="idLine" strokeType="OUTSIDE" strokeWidth="0.0" text="004">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0">
+                                    <children>
+                                        <Text fill="#c0c0c0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role:">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <Pane prefHeight="40.0" prefWidth="20.0" />
+                                        <Text fx:id="roleLine" strokeType="OUTSIDE" strokeWidth="0.0" text="Busboy">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="800.0">
+                                    <children>
+                                        <Text fill="#c0c0c0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact:">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                        <Pane prefHeight="40.0" prefWidth="20.0" />
+                                        <Text fx:id="contactLine" strokeType="OUTSIDE" strokeWidth="0.0" text="450-567-4738">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Pane prefHeight="200.0" prefWidth="300.0" />
+                    </children>
+                </HBox>
+                
+                <!-- Time Clock & Timesheet panels -->
+                <HBox alignment="CENTER" prefHeight="250.0" prefWidth="1400.0" spacing="50.0">
+                    <children>
+                        <!-- Time Clock Panel -->
+                        <VBox alignment="CENTER" prefHeight="250.0" prefWidth="400.0" style="-fx-border-color: #795548; -fx-border-radius: 20; -fx-border-width: 2;">
+                            <children>
+                                <!-- Time clock content here, similar to WaiterAccountController -->
+                            </children>
+                        </VBox>
+                        
+                        <!-- My Timesheet Panel -->
+                        <VBox alignment="CENTER" prefHeight="250.0" prefWidth="400.0" style="-fx-border-color: #795548; -fx-border-radius: 20; -fx-border-width: 2;">
+                            <children>
+                                <!-- Timesheet content here, similar to WaiterAccountController -->
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1400.0">
+                    <children>
+                        <Pane prefHeight="100.0" prefWidth="20.0" />
+                        <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturn" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #1976d2;" text="Return" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
